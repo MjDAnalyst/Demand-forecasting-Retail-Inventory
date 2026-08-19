@@ -17,7 +17,7 @@ Worth flagging upfront: this is a synthetic dataset, and it behaves like one. A 
 
 Approach
 
-1. Data cleaning & EDA — checked for missing values, duplicates, and outliers. The dataset itself was clean (no nulls, no duplicates), but flagged ~673 rows with a negative `Demand Forecast` value and ~715 statistical outliers in `Units Sold` (kept in, not dropped — they look like genuine high-demand days).
+1.Data cleaning & EDA — checked for missing values, duplicates, and outliers. The dataset itself was clean (no nulls, no duplicates), but flagged ~673 rows with a negative `Demand Forecast` value and ~715 statistical outliers in `Units Sold` (kept in, not dropped, they look like genuine high-demand days).
 2.Volatility analysis — compared coefficient of variation across products, stores, and regions.
 3. Seasonality analysis — checked day-of-week, monthly, and labeled-season patterns.
 4.Promotion impact analysis — compared units sold on promotion/discount days vs. not, including a discount-tier breakdown.
@@ -27,9 +27,9 @@ Approach
 Key Findings
 
 - Volatility, seasonality, and promotions all came back flat.
-- Coefficient of variation sits at ~0.78–0.81 across every single product, store, and region — no segment is meaningfully more unpredictable than another.
+- Coefficient of variation sits at ~0.78–0.81 across every single product, store, and region, no segment is meaningfully more unpredictable than another.
 - Day of the week, monthly, and season averages are all within ~2% of each other. No real seasonal curve.
-- Average units sold on promotion days (136.4) vs. non-promotion days (136.5) — essentially identical. Same story across every discount tier (0% through 20%), all landing within a couple percentage points of each other.
+- Average units sold on promotion days (136.4) vs. non-promotion days (136.5), essentially identical. Same story across every discount tier (0% through 20%), all landing within a couple percentage points of each other.
 
 I want to be upfront about this rather than dress it up: this isn't a case of the analysis missing something. It's the dataset itself being synthetic, it doesn't encode the kind of real seasonal/promotional demand drivers you'd expect from actual retail transactions. Reporting "no significant pattern found" honestly is a legitimate conclusion, and I think it's more useful to a reviewer than manufacturing a story that isn't backed by the numbers.
 
@@ -82,5 +82,5 @@ Limitations
 
 Python (pandas, scikit-learn, matplotlib), Power BI (DAX, Power Query).
 
-Built as part of the Stackron Academy mentorship program. Feedback welcome — feel free to open an issue.
+Built as part of the Stackron Academy mentorship program. Feedback welcome, feel free to open an issue.
 
